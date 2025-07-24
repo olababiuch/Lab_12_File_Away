@@ -21,7 +21,7 @@ public class DataSaver {
             String email = SafeInput.getNonZeroLenString(in, "Enter email");
             int birthYear = SafeInput.getRangedInt(in, "Enter year of birth", 1900, 2024);
             String idNumber = String.format("%06d", recordCount);
-            String cvs = String.join("," , firstName, lastName, idNumber, email, String.valueOf(birthYear));
+            String cvs = String.join(", " , firstName, lastName, idNumber, email, String.valueOf(birthYear));
             records.add(cvs);
             recordCount++;
         } while (SafeInput.getYNConfirm(in, "Would you like to enter another record?"));
